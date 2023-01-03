@@ -1,0 +1,118 @@
+\documentclass[twocolumn]{article}
+
+\usepackage{gdewael}
+\usepackage{lipsum}
+\usepackage{authblk}
+\usepackage{appendix}
+\usepackage{url}
+\usepackage{fdsymbol}
+\usepackage[
+	colorlinks = true,
+	allcolors = links
+]{hyperref}
+\usepackage[round]{natbib}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\graphicspath{{./img/}}
+
+\title{Article template}
+
+\renewcommand{\shorttitle}{Article Template} % comment to just get "A Preprint"
+
+\author[1, *]{Gaetan De Waele}
+\author[1]{Co-Author 1}
+\author[2]{Co-Author 2}
+
+\affil[1]{Ghent University}
+\affil[2]{Institute of X}
+\affil[*]{Correspondence to <mail@address.com>.}
+
+
+\hypersetup{
+	pdftitle={Article Template},
+	pdfsubject={q-bio.GN, q-bio.BM, cs.LG},
+	pdfauthor={Gaetan De Waele, Co-Author 1, Co-Author 2},
+	pdfkeywords={First keyword, Second keyword, More},
+}
+
+\begin{document}
+
+\twocolumn[
+\begin{@twocolumnfalse}
+\maketitle
+
+\thispagestyle{empty}
+\end{@twocolumnfalse}
+\begin{abstract}
+\textbf{This is my personal article template. It features all the aesthetics I personally like.}
+	
+\textbf{Separate paragraphs in the abstract do not start with offsets. GitHub: \url{https://github.com/gdewael/}}
+\end{abstract}
+
+\keywords{First keyword \and Second keyword \and More}
+\bigskip
+]
+\section{Introduction}
+\lipsum[1]\footnote{Sample of the first footnote. With citations \citep{devlin2018bert}.}
+
+\begin{equation}
+	\xi _{ij}(t)= {\frac {\alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}{\sum _{i=1}^{N} \sum _{j=1}^{N} \alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}}
+\end{equation}
+
+\lipsum[2]
+
+\subsection{What if one GPU was enough for SOTA performance?} \label{sec:onegpu}
+\lipsum[3] See \S \ref{sec:onegpu}.
+
+\subsection{We were obviously kidding}
+\lipsum[4]
+
+\begin{figure*}[t!]
+	\centering
+	\includegraphics[width=0.50\linewidth]{emotion}
+	\caption{Sample multi-col figure.}
+	\label{fig:fig2}
+\end{figure*}
+
+\begin{equation}
+	N_{publications} \propto N_{GPUs}
+\end{equation}
+
+\lipsum[5]
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.30\linewidth]{happy}
+	\caption{Sample figure caption.}
+	\label{fig:fig1}
+\end{figure}
+
+\lipsum[6]. This is a citation \citep{kingma2014adam, vaswani2017attention}. See awesome Table \ref{tab:table}.
+
+\begin{table}[t!]
+	\caption{Sample table title. Adapted from \citet{devlin2018bert} (but not really).}
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+		\multicolumn{2}{c}{Model}                   \\
+		\cmidrule(r){1-2}
+		Name     & Technique     & \# GPUs \\
+		\midrule
+		DeepDeep & MLP  & 1     \\
+		DeepDeeper     & CNN & 10      \\
+		DeepDeepest     & Transformer       & $\sim10^6$  \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:table}
+\end{table}
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\appendix
+
+\section{Appendix uno}
+\lipsum[8]
+
+
+\end{document}

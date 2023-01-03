@@ -1,0 +1,84 @@
+\usepackage{notomath} % Noto Serif
+\usepackage[T1]{fontenc}
+
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage[verbose=true,letterpaper]{geometry}
+\usepackage{authblk}
+
+\usepackage{caption}
+
+\DeclareCaptionLabelSeparator{dot}{ | }
+\captionsetup{labelsep=dot}
+
+\newcommand{\globalcolor}[1]{%
+	\color{#1}\global\let\default@color\current@color
+}
+\definecolor{headers}{rgb}{0.15, 0.15, 0.25}
+\definecolor{text}{rgb}{0.10, 0.10, 0.15}
+\definecolor{links}{rgb}{0.15, 0.15, 0.70}
+
+\AtBeginDocument{
+	\newgeometry{
+		textheight=9in,
+		textwidth=6.5in,
+		top=1in,
+		headheight=14pt,
+		headsep=25pt,
+		footskip=30pt
+	}
+	\globalcolor{text}
+}
+
+
+% page style for headers and footers
+\newcommand{\shorttitle}{A Preprint}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyheadoffset{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfootoffset{0pt}
+\chead{\footnotesize \textbf{\shorttitle}}
+\rfoot{\footnotesize \thepage}
+
+
+% keywords
+\def\keywordname{{\bfseries Keywords  }}%
+\def\keywords#1{\par\addvspace\medskipamount{\rightskip=0pt plus1cm
+		\def\and{\ifhmode\unskip\nobreak\fi\ $\cdot$
+		}\noindent\keywordname\enspace\ignorespaces#1\par}}
+
+
+% Adds a dot after section titles
+\usepackage{titlesec}
+\titlelabel{\thetitle.\quad}
+
+\newcommand{\@titlebar}{
+	\vskip 0.1in
+	\vskip -\parskip
+	{\color{headers}\hrule height 1.5\p@}
+	\vskip 0.15in%
+}
+
+\renewcommand\AB@affilsepx{, \protect\Affilfont}
+
+\setlength{\affilsep}{0.25em}
+\renewcommand*{\Authfont}{\bfseries}
+\renewcommand{\Authands}{ and }
+
+
+\titleformat*{\section}{\normalfont\Large\bfseries\color{headers}}
+\titleformat*{\subsection}{\normalfont\large\bfseries\color{headers}}
+\titleformat*{\subsubsection}{\normalfont\normalsize\bfseries\color{headers}}
+\titleformat*{\paragraph}{\normalfont\normalsize\bfseries\color{headers}}
+\titleformat*{\subparagraph}{\normalfont\normalsize\bfseries\color{headers}}
+
+\renewcommand{\maketitle}{
+	\bgroup\setlength{\parindent}{0pt}
+	\textbf{\LARGE\color{headers}\@title}
+	\@titlebar
+	\@author\egroup
+}
