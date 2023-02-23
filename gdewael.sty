@@ -53,7 +53,7 @@
 
 
 % Adds a dot after section titles
-\usepackage{titlesec}
+\usepackage[raggedright]{titlesec}
 \titlelabel{\thetitle.\quad}
 
 \newcommand{\@titlebar}{
@@ -78,7 +78,11 @@
 
 \renewcommand{\maketitle}{
 	\bgroup\setlength{\parindent}{0pt}
-	\textbf{\LARGE\color{headers}\@title}
+	\bfseries{\LARGE\color{headers}\@title\par}
 	\@titlebar
 	\@author\egroup
 }
+
+\renewenvironment{abstract}{
+	{\bigskip\bfseries\Large\abstractname\par}
+	\bigskip\bfseries}{\par\smallskip}

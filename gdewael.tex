@@ -15,7 +15,7 @@
 \usepackage{booktabs}
 \graphicspath{{./img/}}
 
-\title{Article template}
+\title{Article Template}
 
 \renewcommand{\shorttitle}{Article Template} % comment to just get "A Preprint"
 
@@ -40,15 +40,13 @@
 \begin{document}
 
 \twocolumn[
-\begin{@twocolumnfalse}
 \maketitle
 
 \thispagestyle{empty}
-\end{@twocolumnfalse}
 \begin{abstract}
-\textbf{This is my personal article template. It features all the aesthetics I personally like.}
+This is my personal article template. It features all the aesthetics I personally like.
 	
-\textbf{Separate paragraphs in the abstract do not start with offsets. GitHub: \url{https://github.com/gdewael/}}
+My GitHub: \url{https://github.com/gdewael/}
 \end{abstract}
 
 \keywords{First keyword \and Second keyword \and More}
@@ -64,7 +62,7 @@
 \lipsum[2]
 
 \subsection{What if one GPU was enough for SOTA performance?} \label{sec:onegpu}
-\lipsum[3] See \S \ref{sec:onegpu}.
+\lipsum[3] See \S \ref{appendix}.
 
 \subsection{We were obviously kidding}
 \lipsum[4]
@@ -113,7 +111,7 @@
 
 \appendix
 
-\section{Appendix uno}
+\section{Appendix uno} \label{appendix}
 \lipsum[8]
 
 
