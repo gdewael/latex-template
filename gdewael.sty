@@ -7,16 +7,18 @@
 \usepackage{authblk}
 
 \usepackage{caption}
+\usepackage[indent=10pt]{parskip}
 
 \DeclareCaptionLabelSeparator{dot}{ | }
 \captionsetup{labelsep=dot}
+\captionsetup[table]{skip=1pt, labelsep=dot}
 
 \newcommand{\globalcolor}[1]{%
 	\color{#1}\global\let\default@color\current@color
 }
 \definecolor{headers}{rgb}{0.15, 0.15, 0.25}
 \definecolor{text}{rgb}{0.10, 0.10, 0.15}
-\definecolor{links}{rgb}{0.15, 0.15, 0.70}
+\definecolor{links}{rgb}{0.15, 0.15, 0.7}
 
 \AtBeginDocument{
 	\newgeometry{
